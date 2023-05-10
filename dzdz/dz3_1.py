@@ -2,9 +2,7 @@
 # В исходном списке минимум 2 элемента.
 
 def modification(lst):
-    lst0 = lst[-1]
-    lst[-1] = lst[0]
-    lst[0] = lst0
+    lst[0], lst[-1] = lst[-1], lst[0]
     # Здесь пишем код
     return lst
 
