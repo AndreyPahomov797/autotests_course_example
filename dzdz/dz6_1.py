@@ -12,8 +12,12 @@ string = 'Hello'
 
 
 def global_changes():
+    """
+    Функция переприсваивает глобальную переменную number и string
+    :return: значения переприсвоеных переменных number и string
+    """
     # Здесь нужно написать код
-    global number, string
+    global number, string  # Обращение внутри функции к глобальным переменным
     number = 5
     string = 'Hello, dear friend'
     return number, string
