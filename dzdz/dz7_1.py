@@ -10,34 +10,49 @@
 # Segment((-2, -3), (-4, -5)).y_axis_intersection() --> False
 
 # Здесь пишем код
-class Segment:  # Создаю класс, где каждый элемент это кортеж из двух элементов (координаты точки)
+class Segment:
+    """
+         Формируется класс Segment с атрибутами:
+         кортеж из координат двух точек, например: ((1, 3), (1, 4))
+         """
+    # Создаю класс, где каждый элемент это кортеж из двух элементов (координаты точки)
     def __init__(self, x1_y1, x2_y2):
         self.x1_y1 = x1_y1
         self.x2_y2 = x2_y2
 
     # Метод находит расстояние между точками, где оно является гипотенузой прямоугольного треугольника, round округляет до двух цифр после запятой
     def length(self):
+        """
+                Метод находит длину отрезка, соединяющий заданные две точки
+                :return: длина отрезка в единицах координат
+                """
         return round(((self.x2_y2[0]-self.x1_y1[0])**2+(self.x2_y2[1]-self.x1_y1[1])**2)**0.5, 2)
 
     # Метод определяет пересекает ли отрезок ось абцисс, методом сравнения координат "у" с нулем
     def x_axis_intersection(self):
-        if self.x1_y1[1] > 0 > self.x2_y2[1]:
+        """
+                 Метод определяет пересекает ли отрезок ось абцисс
+                 :return: True или False
+                 """
+        if self.x1_y1[1] > 0 > self.x2_y2[1] or self.x1_y1[1] < 0 < self.x2_y2[1]:
             otvet = True
-        if self.x1_y1[1] < 0 < self.x2_y2[1]:
-            otvet = True
+            return otvet
         else:
             otvet = False
-        return otvet
+            return otvet
 
     # Тут сравнивает с нулем координату "x"
     def y_axis_intersection(self):
-        if self.x1_y1[0] > 0 > self.x2_y2[0]:
+        """
+                Метод определяет пересекает ли отрезок ось ординат
+                :return: True или False
+                """
+        if self.x1_y1[0] > 0 > self.x2_y2[0] or self.x1_y1[0] < 0 < self.x2_y2[0]:
             otvet = True
-        if self.x1_y1[0] < 0 < self.x2_y2[0]:
-            otvet = True
+            return otvet
         else:
             otvet = False
-        return otvet
+            return otvet
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 

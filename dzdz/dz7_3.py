@@ -24,6 +24,14 @@
 # У класса должно быть СВОЙСТВО how_long, которое вычисляет время прохождения маршрута по формуле max_speed/(4*path)
 
 class PublicTransport:
+    """
+        Формируется класс PublicTransport с атрибутами:
+        param brand: марка;
+        param engine_power: мощность двигателя;
+        param year: сколько лет автомобилю;
+        param color: цвет кузова;
+        param max_speed: максимальная развиваемая скорость
+        """
 
     def __init__(self, brand, engine_power, year, color, max_speed):
         self.brand = brand
@@ -38,7 +46,12 @@ class PublicTransport:
 
 
 class Bus(PublicTransport):
-
+    """
+            Формируется унаследованный класс Bus от PublicTransport с доп. атрибутами:
+            пассажиры;
+            парк приписки автобуса;
+            стоимость проезда
+            """
     def __init__(self, brand, engine_power, year, color, max_speed, passengers, park, fare):
         super().__init__(brand, engine_power, year, color, max_speed)
         self.passengers = passengers
@@ -55,6 +68,12 @@ class Bus(PublicTransport):
 
 
 class Tram(PublicTransport):
+    """
+             Формируется унаследованный класс Tram от PublicTransport с доп. атрибутами:
+             маршрут трамвая;
+             длина маршрута;
+             стоимость проезда
+             """
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
         super().__init__(brand, engine_power, year, color, max_speed)
         self.__route = route
