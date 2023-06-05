@@ -8,14 +8,11 @@
 
 
 # Здесь пишем код
-def segment(argument):
+def segment(argument1, argument2):
     """Функция складывает два кортежа, в каждом из которыхдва элемента. Если среди элементов строка,
     выдает ошибку в обратную сторону"""
     try:
-        kort = argument[0] + argument[1]
-        summ = 0
-        for i in range(len(kort)):  # Складываю все элементы кортежей в один
-            summ = summ + kort[i]
+        summ = argument1[0] + argument1[1] + argument2[0] + argument2[1]
         return summ
     except TypeError as e:
         str_e = str(e)
