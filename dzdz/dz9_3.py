@@ -4,15 +4,15 @@
 # Нужно найти сумму трёх самых дорогих покупок, которые запишутся в переменную three_most_expensive_purchases
 
 # Здесь пишем код
-f = open('test_file/task_3.txt', 'r', encoding='utf-8')
-summ = 0
-s = []
-for i in f.readlines():  # Построчно читаем текст в файле
-    if i != '\n':  # Если следующая строка не пустая, то накапливаем сумму
-        summ = summ + int(i)
-    else:  # Иначе накопленную сумму добавляем в новый список и обнуляем сумму
-        s.append(summ)
-        summ = 0
+with open('test_file/task_3.txt', 'r', encoding='utf-8') as f:
+    summ = 0
+    s = []
+    for i in f.readlines():  # Построчно читаем текст в файле
+        if i != '\n':  # Если следующая строка не пустая, то накапливаем сумму
+            summ = summ + int(i)
+        else:  # Иначе накопленную сумму добавляем в новый список и обнуляем сумму
+            s.append(summ)
+            summ = 0
 p = sorted(s)  # Сортировка стоимостей покупок по возрастанию
 three_most_expensive_purchases = p[-1]+p[-2]+p[-3]  # Сложение 3-ёх самых дорогих покупок
 assert three_most_expensive_purchases == 202346
